@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Deloitte Auditor Enterprise Chat UI</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="chat-interface">
+            <header>
+                <h1>Deloitte Auditor Enterprise Chat UI</h1>
+                <img src="/deloitte-logo.svg" alt="Deloitte" class="deloitte-logo">
+            </header>
+            <main>
+                <section class="prompt-section">
+                    <h2>Tax Prompt</h2>
+                    <textarea id="prompt-input" rows="8" placeholder="Enter your tax-related question here..."></textarea>
+                </section>
+                <section class="button-section">
+                    <button type="button" class="send-btn">
+                        <img src="/openai-white-logomark.svg" alt="" class="send-icon">
+                        Send
+                    </button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </section>
+                <section class="response-section">
+                    <h2>Response</h2>
+                    <div id="response-area"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <!-- Load scripts at the end of body -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html> 
