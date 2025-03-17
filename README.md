@@ -25,18 +25,14 @@ pip install -r requirements.txt
 ```
 
 4. Create a `.env` file in the root directory and add your Gemini API key: 
-```
 
-## Running the Application
+5. Start the Flask server by running
 
-1. Start the Flask server by running:
 ```
 python app.py
-# or
-python3 app.py
 ```
 
-2. Open your web browser and navigate to:
+6. Open your web browser and navigate to:
 ```
 http://localhost:5000
 ```
