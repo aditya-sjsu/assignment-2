@@ -104,19 +104,49 @@ button {
 
 .response-section {
     background-color: #E5E5E5;
+    max-height: 600px;
+    overflow: hidden;
+    padding-bottom: 20px;
 }
 
 #response-area {
     min-height: 200px;
+    max-height: 560px;
     padding: 20px 40px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #1B1B4B #E5E5E5;
+}
+
+/* Webkit scrollbar styles (Chrome, Safari, Edge) */
+#response-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+#response-area::-webkit-scrollbar-track {
+    background: #E5E5E5;
+}
+
+#response-area::-webkit-scrollbar-thumb {
+    background-color: #1B1B4B;
+    border-radius: 4px;
 }
 
 .chat-entry {
     background-color: white;
     margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chat-entry:last-child {
+    margin-bottom: 20px;
+}
+
+.chat-entry + .chat-entry {
+    margin-top: 20px;
 }
 
 .chat-entry .timestamp {
