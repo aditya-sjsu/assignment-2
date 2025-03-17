@@ -10,17 +10,17 @@ A web application that provides tax advisory services using Gemini AI.
 ## Installation
 
 1. Clone the repository:
-```bash
+```
 git clone [your-repository-url]
 ```
 
 2. Navigate to the project directory:
-```bash
+```
 cd "Deloitte Chat Agent"
 ```
 
 3. Install required Python packages:
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ## Running the Application
 
 1. Start the Flask server by running:
-```bash
+```
 python app.py
 # or
 python3 app.py
