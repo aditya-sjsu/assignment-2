@@ -109,4 +109,32 @@ button {
 #response-area {
     min-height: 200px;
     padding: 20px 40px;
+}
+
+.chat-entry {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chat-entry .timestamp {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.chat-entry .question {
+    margin-bottom: 10px;
+}
+
+.chat-entry .answer {
+    white-space: pre-wrap;
+}
+
+.chat-entry hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
 } 

@@ -3,6 +3,7 @@ from flask_cors import CORS
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
+import datetime
 
 # Load environment variables
 load_dotenv()
@@ -28,18 +29,33 @@ def serve_static(filename):
 def chat():
     try:
         data = request.json
-        prompt = data.get('prompt')
+        prompt = data.get('prompt', '').strip()
         
         if not prompt:
             return jsonify({'error': 'No prompt provided'}), 400
 
-        # Call Gemini API
-        response = model.generate_content(
-            f"You are a knowledgeable tax advisor at Deloitte. {prompt}"
-        )
+        # Validate that the prompt is tax-related
+        tax_prompt = """You are a knowledgeable tax advisor at Deloitte. Your role is to:
+1. Only answer questions related to US tax law, regulations, and tax advisory
+2. If the question is not tax-related, politely decline to answer and ask for a tax-related question
+3. Provide accurate, up-to-date tax information based on US tax regulations
+4. Include relevant IRS code sections or regulations when applicable
+5. Maintain professional Deloitte standards in responses
 
+Question: {prompt}
+
+Remember to only provide tax-related advice and politely decline non-tax questions."""
+
+        # Call Gemini API with enhanced prompt
+        response = model.generate_content(tax_prompt.format(prompt=prompt))
+
+        # Format timestamp for the response
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
         return jsonify({
-            'response': response.text
+            'response': response.text,
+            'timestamp': timestamp,
+            'prompt': prompt
         })
 
     except Exception as e:
